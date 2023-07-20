@@ -58,7 +58,7 @@ const resultadoBostero = miClub.soy_bostero()
 const resultadoMillonario = miClub.soy_millonario()
 
 if (resultadoBostero) {
-    array.push(miClub)
+    array.push(resultadoBostero)
 }
 if (resultadoMillonario) {
     array.push(resultadoMillonario)
@@ -151,4 +151,4 @@ if (carrito.length > 0) {
 }
 }
 
-calcularTotal();
+calcularTotal();git
