@@ -3,11 +3,20 @@
 
 let edad = Number (prompt("Por favor ingrese la edad"));
 let edades = [];
-let sumaEdades = 0;
+let sumaEdadesMayores = 0;
+let sumaEdadesMenores = 0;
 
 let personas = 0;
 let resultado = 0;
 let nuevoIngreso = false;
+
+function edadesMenores (el) {
+    return el < 18;
+  }
+  
+  function edadesMayores (el) {
+    return el >= 18;
+  }
 
 function contador (edad) {
     while (edad) {
@@ -25,39 +34,33 @@ function contador (edad) {
 }
 contador(edad);
 
-for (const valor of edades) {
-    sumaEdades += valor;
+let menores = edades.filter(edadesMenores);
+let mayores = edades.filter(edadesMayores);
+
+console.log(menores);
+
+
+for (const valor of menores) {
+    sumaEdadesMenores += valor;
 }
-console.log(sumaEdades);
+console.log(sumaEdadesMenores);
+
+for (const valor of mayores) {
+    sumaEdadesMayores += valor;
+}
+console.log(sumaEdadesMayores);
+
+function calcularPromedioEdadMenores (edad, personas) {
+    resultado = (sumaEdadesMenores / menores.length).toFixed(1);
+    console.log(resultado); 
+}
+
+function calcularPromedioEdadMayores(edad, personas) {
+    resultado = (sumaEdadesMayores / mayores.length).toFixed(1);
+    console.log(resultado);
+}
+calcularPromedioEdadMenores(edad, personas);
+calcularPromedioEdadMayores(edad, personas);
 
 
-function calcularPromedioEdad (edad, personas) {
-    // contador (edad, personas);
-    resultado = (sumaEdades / personas).toFixed(1);
-    console.log(resultado);  }
-
-calcularPromedioEdad(edad, personas);
-
-
-// function contador(edad, personas){
-//     // if( edad === undefined ) return alert("No ingresaste una edad");
-//     // if (edad !== "number") return alert("No ingresaste un número");
-//      do {
-//         personas = personas++;
-//         calcularEdad (edad, personas);
-//         nuevoIngreso = confirm("Desea agregar otra edad?")
-//         if (nuevoIngreso) {
-//             edad = Number (prompt("Por favor ingrese la edad"));
-//         }
-//     } while (nuevoIngreso)
-// }
-
-
-// function calcularEdad (edad, personas) {
-//      contador (edad, personas);
-//      resultado = (edad / personas).toFixed(1);
-//      console.log(resultado);  }
-
-
-//  contador(edad, personas);
 
